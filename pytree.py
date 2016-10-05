@@ -60,5 +60,5 @@ if __name__ == '__main__':
     if len(sys.argv) == 2 and isdir(sys.argv[1]):
         nDirs, nFiles = tree(sys.argv[1])
     else:
-    	nDirs, nFiles = tree(".")
+        nDirs, nFiles = tree(".")
     print("\n" + str(nDirs) + " directories, " + str(nFiles) + " files")
