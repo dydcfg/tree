@@ -12,11 +12,13 @@ MID_LEVEL_SPACE = "    "
 LAST_LEVEL = '├── '
 LAST_LEVEL_LAST_ITEM = '└── '
 
+
 def addPrefix(prefix):
     s = ""
     for x in prefix:
         s = s + x
     return s
+
 
 def tree(dirPath, prefix=[]):
     if(len(prefix) == 0):
@@ -42,7 +44,7 @@ def tree(dirPath, prefix=[]):
                 nDirs = nDirs + x
                 nFiles = nFiles + y
                 del prefix[-1]
-                
+
             else:
                 nFiles = nFiles + 1
                 if(count == nElement):
@@ -56,7 +58,7 @@ if __name__ == '__main__':
     # just for demo
     # subprocess.run(['tree'] + sys.argv[1:])
     if len(sys.argv) == 2 and isdir(sys.argv[1]):
-    	nDirs, nFiles = tree(sys.argv[1])
+        nDirs, nFiles = tree(sys.argv[1])
     else:
     	nDirs, nFiles = tree(".")
     print("\n" + str(nDirs) + " directories, " + str(nFiles) + " files")
